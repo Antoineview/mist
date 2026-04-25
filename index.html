@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mist — playground</title>
+    <style>
+      * { box-sizing: border-box; }
+      html, body { margin: 0; height: 100%; background: #0a0a0a; color: #f0f0f0; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif; }
+      #app { display: grid; grid-template-rows: 1fr auto; height: 100vh; min-height: 100vh; }
+      #stage { position: relative; overflow: hidden; min-height: 300px; display: flex; align-items: center; justify-content: center; padding: 32px; }
+      #target { font-size: clamp(28px, 6vw, 72px); font-weight: 600; line-height: 1.15; letter-spacing: -0.02em; max-width: 18ch; text-align: center; }
+      #controls {
+        padding: 14px 18px;
+        background: #131313;
+        border-top: 1px solid #222;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px 24px;
+        align-items: center;
+        font-size: 13px;
+      }
+      #controls label { display: flex; align-items: center; gap: 8px; }
+      #controls input[type="range"] { width: 130px; }
+      #controls select, #controls input[type="text"] {
+        background: #1a1a1a; color: #f0f0f0; border: 1px solid #2a2a2a;
+        padding: 5px 8px; border-radius: 4px; font-size: 13px;
+      }
+      #controls input[type="text"] { width: 280px; }
+      button { background: #232323; border: 1px solid #333; color: #f0f0f0; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 13px; }
+      button:hover { background: #2c2c2c; }
+      .group { display: flex; gap: 8px; }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div id="stage">
+        <div id="target">A small thing, well-made, can change a day.</div>
+      </div>
+      <div id="controls">
+        <label>text <input id="text" type="text" value="A small thing, well-made, can change a day." /></label>
+        <label>split
+          <select id="split">
+            <option value="word" selected>word</option>
+            <option value="line">line</option>
+            <option value="char">char</option>
+          </select>
+        </label>
+        <label>stagger <input id="stagger" type="range" min="0" max="200" step="5" value="60" /><span id="stagger-v">60</span>ms</label>
+        <label>duration <input id="duration" type="range" min="100" max="2000" step="50" value="800" /><span id="duration-v">800</span>ms</label>
+        <label>blur <input id="blur" type="range" min="0" max="40" step="1" value="20" /><span id="blur-v">20</span>px</label>
+        <label>y <input id="y" type="range" min="0" max="60" step="1" value="12" /><span id="y-v">12</span>px</label>
+        <div class="group">
+          <button id="in">In</button>
+          <button id="out">Out</button>
+          <button id="toggle">Toggle</button>
+          <button id="replay">Replay</button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/playground/main.ts"></script>
+  </body>
+</html>
