@@ -7,13 +7,13 @@ Framework-agnostic core + a thin React wrapper. Uses the Web Animations API and 
 ## Install
 
 ```sh
-npm install mist
+npm install @antoineview/mist
 ```
 
 ## Vanilla usage
 
 ```ts
-import { Mist } from 'mist';
+import { Mist } from '@antoineview/mist';
 
 const el = document.querySelector('h1')!;
 const m = new Mist(el, {
@@ -33,7 +33,7 @@ m.destroy();
 ## React usage
 
 ```tsx
-import { MistText } from 'mist/react';
+import { MistText } from '@antoineview/mist/react';
 
 <MistText text="A small thing, well-made, can change a day." split="word" />
 ```

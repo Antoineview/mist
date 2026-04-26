@@ -1,6 +1,9 @@
 {
-  "name": "mist",
+  "name": "@antoineview/mist",
   "version": "0.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "Apple Vision-style fluid blur text entry/exit animations.",
   "type": "module",
   "main": "./dist/index.cjs",
